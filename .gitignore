@@ -1,0 +1,20 @@
+# Compilados / build
+/target/
+
+# IDE
+/.idea/
+*.iml
+.classpath
+.project
+.settings/
+
+# SO
+.DS_Store
+Thumbs.db
+
+# Allure
+allure-results/
+allure-report/
+
+# Logs
+*.log
