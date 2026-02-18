@@ -7,8 +7,6 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.interactions.WheelInput;
-import org.openqa.selenium.print.PrintOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -31,7 +29,7 @@ public class BasePage {
     }
 
     protected boolean elementNotFound(By locator) {
-        return driver.findElements(locator).size()==0;
+        return driver.findElements(locator).isEmpty();
     }
 
     protected void click(By locator) {
@@ -75,7 +73,7 @@ public class BasePage {
         return date.format(formatter);
     }
 
-    public String dateReservationConverter(LocalDate date) {
+    public String dateBookingConverter(LocalDate date) {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
         return date.format(formatter);
     }

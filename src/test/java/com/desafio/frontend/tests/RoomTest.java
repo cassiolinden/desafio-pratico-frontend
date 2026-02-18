@@ -48,8 +48,8 @@ public class RoomTest extends BaseTest {
         // Para não ficar falhando, incluí a validação de sucesso abaixo.
 
         assertEquals("Booking Confirmed", room.getBookingConfirmed());
-        assertEquals(room.dateReservationConverter(checkInExpected), room.getCheckInDate());
-        assertEquals(room.dateReservationConverter(checkOutExpected.plusDays(1)),room.getCheckOutDate());
+        assertEquals(room.dateBookingConverter(checkInExpected), room.getCheckInDate());
+        assertEquals(room.dateBookingConverter(checkOutExpected.plusDays(1)),room.getCheckOutDate());
     }
 
     @Test
@@ -120,8 +120,8 @@ public class RoomTest extends BaseTest {
                 .reserveNow();
 
         assertEquals("Booking Confirmed", room.getBookingConfirmed());
-        assertEquals(room.dateReservationConverter(checkInExpected), room.getCheckInDate());
-        assertEquals(room.dateReservationConverter(checkOutExpected),room.getCheckOutDate());
+        assertEquals(room.dateBookingConverter(checkInExpected), room.getCheckInDate());
+        assertEquals(room.dateBookingConverter(checkOutExpected),room.getCheckOutDate());
     }
 
     @Test
