@@ -1,8 +1,10 @@
 # Compilados / build
-/target/
-!target/allure-results
-!target/site
-.allure
+/target/generated-test-sources/
+/target/generated-sources/
+/target/test-classes/
+/target/surefire-reports/
+/target/maven-status/
+/target/classes/
 
 # IDE
 /.idea/
@@ -16,8 +18,7 @@
 Thumbs.db
 
 # Allure
-allure-results/
-allure-report/
+.allure
 
 # Logs
 *.log
