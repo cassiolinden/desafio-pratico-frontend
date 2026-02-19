@@ -1,10 +1,5 @@
 # Compilados / build
-/target/generated-test-sources/
-/target/generated-sources/
-/target/test-classes/
-/target/surefire-reports/
-/target/maven-status/
-/target/classes/
+target/
 
 # IDE
 /.idea/
