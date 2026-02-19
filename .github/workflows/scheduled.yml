@@ -43,7 +43,7 @@ jobs:
         if: always()
         uses: actions/upload-pages-artifact@v3
         with:
-          path: target/site/allure-report
+          path: target/site/allure-results
 
   deploy:
     if: always()

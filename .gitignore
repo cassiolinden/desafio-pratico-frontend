@@ -1,5 +1,8 @@
 # Compilados / build
 /target/
+!target/allure-results
+!target/site
+.allure
 
 # IDE
 /.idea/
