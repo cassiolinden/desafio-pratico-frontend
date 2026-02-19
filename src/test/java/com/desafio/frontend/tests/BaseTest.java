@@ -1,13 +1,15 @@
 package com.desafio.frontend.tests;
 
+import com.desafio.frontend.core.AutoScreenshotExtension;
 import com.desafio.frontend.core.DriverFactory;
-import io.qameta.allure.junit5.AllureJunit5;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.extension.ExtendWith;
+import org.junit.jupiter.api.extension.RegisterExtension;
 
-@ExtendWith(AllureJunit5.class)
 public class BaseTest {
+    @RegisterExtension
+    AutoScreenshotExtension screenshotManager = new AutoScreenshotExtension(
+            c -> DriverFactory.getDriver());
 
     @BeforeEach
     void setUp() {

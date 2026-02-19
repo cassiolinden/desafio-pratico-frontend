@@ -103,11 +103,12 @@ public class HomePage extends BasePage {
         return this;
     }
 
+    @Step("Validar que quarto foi carregado")
     public WebElement roomLoaded(String room){
         return wait.until(visibilityOfElementLocated(By.xpath("//h1[contains(., '"+room+"')]")));
     }
-
-    public boolean roomNotLoaded(String room){
+    @Step("Validar que quarto não foi carregado")
+    public boolean roomNotLoaded(String room) {
         return elementNotFound(By.xpath("//h5[contains(., '"+room+"')]"));
     }
 
@@ -140,7 +141,7 @@ public class HomePage extends BasePage {
         waitAndClick(submitButton);
         return this;
     }
-
+    @Step("Contato enviado com sucesso")
     public boolean postContact(){
         wait.until(visibilityOfElementLocated(postContactSectionTitle));
         return true;

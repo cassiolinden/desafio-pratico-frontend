@@ -25,9 +25,30 @@ jobs:
       - name: Run tests (headless)
         run: mvn -B clean test -Dheadless=true
 
-      - name: Upload Allure results
-        uses: actions/upload-artifact@v4
+      - name: Generate Allure Report
         if: always()
+        run: mvn allure:report
+
+      - name: Upload Allure Report to Pages
+        if: always()
+        uses: actions/upload-pages-artifact@v3
         with:
-          name: allure-results
-          path: target/allure-results
+          path: target/site/allure-report
+
+  deploy:
+    if: always()
+    needs: test
+    runs-on: ubuntu-latest
+
+    permissions:
+      pages: write
+      id-token: write
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

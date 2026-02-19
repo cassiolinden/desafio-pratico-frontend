@@ -15,7 +15,6 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
 public class BasePage {
-
     protected WebDriver driver;
     protected WebDriverWait wait;
 
@@ -33,6 +32,7 @@ public class BasePage {
     }
 
     protected void click(By locator) {
+        //ScreenshotUtils.savePageScreenshot(driver, );
         find(locator).click();
     }
 
