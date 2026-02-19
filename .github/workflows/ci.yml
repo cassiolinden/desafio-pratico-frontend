@@ -33,7 +33,7 @@ jobs:
         if: always()
         uses: actions/upload-pages-artifact@v3
         with:
-          path: target/site/allure-results
+          path: target/site/allure-maven-plugin
 
   deploy:
     if: always()
